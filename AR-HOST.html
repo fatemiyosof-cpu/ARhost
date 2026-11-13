@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#081426">
+  <title>AR HOST — Control Center</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+:root{--bg:#071326;--panel:rgba(14,31,54,.78);--line:rgba(147,190,224,.13);--text:#edf7ff;--muted:#91a8bf;--cyan:#52d8f4;--blue:#398cff}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 70% 0%,#102b4b 0%,var(--bg) 48%,#050d19 100%);color:var(--text);font-family:Inter,Arial,sans-serif;min-height:100vh;overflow-x:hidden}.ambient{position:fixed;width:420px;height:420px;border-radius:50%;filter:blur(100px);opacity:.13;pointer-events:none;z-index:-1}.ambient-a{background:#20c9ee;top:-190px;right:8%}.ambient-b{background:#2865ff;bottom:-230px;left:8%}.hidden{display:none!important}.glass{background:linear-gradient(145deg,rgba(20,43,70,.82),rgba(9,23,42,.78));border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.18),inset 0 1px rgba(255,255,255,.035);backdrop-filter:blur(18px)}.login-wrap{min-height:100vh;display:grid;place-items:center;padding:24px}.login-card{width:min(430px,100%);padding:42px;border-radius:25px;animation:rise .65s ease both}.brand-mark{font-size:30px;font-weight:800;letter-spacing:-1.8px}.brand-mark span{color:var(--cyan)}.eyebrow{font-size:10px;letter-spacing:2px;color:var(--cyan);font-weight:800;margin:22px 0 10px}.login-card h1,.welcome-row h1{font-size:30px;letter-spacing:-1.2px;margin:0 0 9px}.muted{color:var(--muted);font-size:13px;line-height:1.7}.login-card form{display:grid;gap:10px;margin-top:27px}.login-card label{font-size:12px;color:#c4d7e9;margin-top:7px}.login-card input{width:100%;padding:14px 15px;border-radius:11px;border:1px solid var(--line);background:#08182b;color:white;outline:none}.login-card input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #52d8f41c}.btn{border:0;border-radius:11px;padding:13px 17px;font-weight:700;cursor:pointer;color:#041323;transition:.2s}.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}.primary{background:linear-gradient(110deg,#55e0ed,#579cff);box-shadow:0 8px 25px #3aa9e52b}.full{width:100%;margin-top:14px}.full span{float:right}.fine-print{font-size:10px;color:#718ba5;text-align:center;margin:22px 0 0}.app-shell{min-height:100vh;display:flex}.sidebar{width:250px;position:fixed;inset:0 auto 0 0;padding:27px 17px;background:rgba(5,16,30,.8);border-right:1px solid var(--line);display:flex;flex-direction:column;z-index:5;backdrop-filter:blur(20px)}.brand{display:flex;align-items:center;gap:11px;color:var(--text);text-decoration:none;font-weight:800;font-size:17px;margin:2px 7px 47px}.brand-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:12px;background:linear-gradient(140deg,#55dff0,#3988ff);color:#061629;font-size:16px}.brand .cyan{color:var(--cyan)}.brand small{display:block;font-size:8px;letter-spacing:1.7px;color:#7e9ab4;margin-top:4px}.side-label{font-size:9px;color:#607b96;letter-spacing:1.8px;font-weight:800;padding:0 12px 12px}nav{display:grid;gap:6px}.nav-item{width:100%;border:0;background:transparent;color:#9db2c8;padding:12px;border-radius:10px;text-align:left;font:600 12px Inter;cursor:pointer;display:flex;align-items:center;gap:12px}.nav-item i{font-style:normal;font-size:17px;width:20px;text-align:center;color:#78a9ce}.nav-item:hover,.nav-item.active{background:linear-gradient(90deg,#1a4c6c6b,#183b5b30);color:#f4fbff}.nav-item.active{box-shadow:inset 2px 0 var(--cyan)}.sidebar-bottom{margin-top:auto}.help-box{padding:13px 10px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;gap:9px;margin-bottom:15px;font-size:10px}.help-box small{display:block;color:var(--muted);margin-top:4px}.help-box>span:last-child{margin-left:auto;color:var(--cyan)}.help-dot,.status i,.tag i{width:7px;height:7px;border-radius:50%;background:#50ddb0;box-shadow:0 0 10px #50ddb0}.logout{color:#9baec1}.main-area{margin-left:250px;width:calc(100% - 250px);min-height:100vh}.topbar{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 38px;background:#07132650}.crumb{color:#718aa3;font-size:12px}.topbar b{font-size:12px}.top-actions{display:flex;align-items:center;gap:20px}.status{font-size:10px;color:#a9c0d5;display:flex;align-items:center;gap:8px}.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(140deg,#54d9ed,#477fe9);color:#071326;font-weight:800}.content{max-width:1400px;margin:auto;padding:35px 38px}.welcome-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:29px}.welcome-row .eyebrow{margin:0 0 10px}.welcome-row h1{font-size:27px}.welcome-row .muted{margin:0}.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.stat-card{padding:19px;border-radius:16px;min-height:145px}.stat-top{display:flex;justify-content:space-between;color:#a8bdd0;font-size:11px}.stat-icon{font-size:18px;color:var(--cyan)}.stat-card strong{display:block;font-size:28px;margin:17px 0 7px;letter-spacing:-1px}.stat-card em{font-size:13px;color:#9db3c9;font-style:normal}.stat-card small{font-size:10px;color:#829ab1}.positive{color:#53dcb2}.progress{height:4px;background:#263b52;border-radius:5px;margin:0 0 7px;overflow:hidden}.progress span{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#50dbea,#488dff)}.section-heading{display:flex;justify-content:space-between;align-items:center;margin:32px 0 14px}.section-heading h2{font-size:16px;margin:0 0 5px}.section-heading p{margin:0;font-size:11px}.quick-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.quick-card{position:relative;text-align:left;padding:18px;border-radius:14px;color:var(--text);cursor:pointer;transition:.2s}.quick-card:hover{transform:translateY(-3px);border-color:#52d8f455}.quick-card>span{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#42c9ed19;color:var(--cyan);font-size:19px;margin-bottom:15px}.quick-card b,.quick-card small{display:block}.quick-card b{font-size:11px}.quick-card small{font-size:9px;color:var(--muted);margin-top:6px}.quick-card i{position:absolute;right:16px;top:17px;color:#6d91b0;font-style:normal}.text-btn{border:0;background:none;color:var(--cyan);font-weight:700;font-size:10px;cursor:pointer}.table-card{border-radius:15px;overflow:hidden}.table-head,.table-row{display:grid;grid-template-columns:2fr 1.1fr .8fr .7fr;align-items:center;gap:10px;padding:15px 19px}.table-head{font-size:8px;letter-spacing:1.3px;color:#7892aa;background:#ffffff06}.table-row{font-size:10px;color:#b8cadd;border-top:1px solid var(--line)}.site-cell{display:flex;align-items:center;gap:11px}.site-cell b,.site-cell small{display:block}.site-cell b{font-size:10px;color:#e5f2fc}.site-cell small{font-size:9px;color:#8198af;margin-top:4px}.site-icon{width:30px;height:30px;border-radius:9px;background:#36c8e91c;color:var(--cyan);display:grid;place-items:center}.site-icon.purple{background:#9b7bff1c;color:#b5a0ff}.tag{display:flex;align-items:center;gap:7px;color:#8fdcc4;font-size:9px}.tag i{width:6px;height:6px}.placeholder{min-height:360px;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:35px}.placeholder-icon{width:60px;height:60px;border-radius:18px;display:grid;place-items:center;background:#43c9ed17;color:var(--cyan);font-size:28px}.placeholder .eyebrow{margin:20px 0 8px}.placeholder h2{margin:0;font-size:23px}.placeholder>p:not(.eyebrow){max-width:440px}.coming{margin-top:13px;padding:8px 12px;border:1px solid #52d8f43a;border-radius:20px;color:var(--cyan);font-size:9px;letter-spacing:1px;font-weight:800}footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);margin-top:42px;padding:20px 0;color:#7089a2;font-size:9px}footer b{color:var(--cyan)}.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);opacity:0;background:#15334a;border:1px solid #52d8f455;padding:12px 18px;border-radius:10px;font-size:11px;transition:.25s;z-index:10}.toast.show{opacity:1;transform:translate(-50%,0)}.mobile-menu{display:none;background:none;color:white;border:0;font-size:20px}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}@media(max-width:1000px){.stats-grid{grid-template-columns:repeat(2,1fr)}.quick-grid{grid-template-columns:repeat(2,1fr)}.content{padding:28px 24px}}@media(max-width:700px){.sidebar{transform:translateX(-105%);transition:.25s}.sidebar.open{transform:translateX(0)}.main-area{margin-left:0;width:100%}.topbar{padding:0 18px}.mobile-menu{display:block}.topbar>div:first-of-type{margin-right:auto;margin-left:13px}.status{display:none}.content{padding:25px 17px}.welcome-row{align-items:flex-start;gap:15px;flex-direction:column}.stats-grid{gap:10px}.stat-card{padding:15px;min-height:130px}.stat-card strong{font-size:23px}.quick-grid{gap:9px}.quick-card{padding:14px}.table-head,.table-row{grid-template-columns:1.8fr 1fr;padding:13px}.table-head span:nth-child(n+3),.table-row>span:nth-child(n+3){display:none}.login-card{padding:30px 24px}footer{gap:10px;flex-wrap:wrap}}
+
+  </style>
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <main id="loginView" class="login-wrap">
+    <section class="login-card glass">
+      <div class="brand-mark">AR<span>HOST</span></div>
+      <p class="eyebrow">HOSTING CONTROL CENTER</p>
+      <h1>Welcome back</h1>
+      <p class="muted">Sign in to manage your hosting workspace.</p>
+      <form id="demoLogin">
+        <label for="email">Email address</label>
+        <input id="email" type="email" placeholder="admin@arhost.example" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" placeholder="Enter your password" required>
+        <button class="btn primary full" type="submit">Open demo dashboard <span>↗</span></button>
+      </form>
+      <p class="fine-print">UI preview only · Authentication is not connected</p>
+    </section>
+  </main>
+
+  <div id="appView" class="app-shell hidden">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" aria-label="AR HOST home"><span class="brand-icon">AR</span><span>AR<span class="cyan">HOST</span><small>CONTROL CENTER</small></span></a>
+      <div class="side-label">WORKSPACE</div>
+      <nav id="nav">
+        <button class="nav-item active" data-page="Overview"><i>◫</i>Overview</button>
+        <button class="nav-item" data-page="Websites"><i>▣</i>Websites</button>
+        <button class="nav-item" data-page="File Manager"><i>▤</i>File Manager</button>
+        <button class="nav-item" data-page="Databases"><i>▦</i>Databases</button>
+        <button class="nav-item" data-page="Domains"><i>◎</i>Domains & DNS</button>
+        <button class="nav-item" data-page="Email"><i>✉</i>Email</button>
+        <button class="nav-item" data-page="Backups"><i>◷</i>Backups</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-box"><span class="help-dot"></span><div><b>Need assistance?</b><small>Support center</small></div><span>↗</span></div>
+        <button class="nav-item logout" id="logout">↪ Sign out</button>
+      </div>
+    </aside>
+
+    <section class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="menuToggle" aria-label="Toggle menu">☰</button>
+        <div><span class="crumb">Workspace</span><b id="pageCrumb"> / Overview</b></div>
+        <div class="top-actions"><span class="status"><i></i> Demo environment</span><div class="avatar">A</div></div>
+      </header>
+      <div class="content">
+        <div class="welcome-row">
+          <div><p class="eyebrow">FRIDAY, YOUR WORKSPACE</p><h1 id="pageTitle">Overview</h1><p class="muted" id="pageSubtitle">Here’s what’s happening with your hosting services.</p></div>
+          <button class="btn primary" id="newSite">＋ Add website</button>
+        </div>
+
+        <section id="overviewPage">
+          <div class="stats-grid">
+            <article class="stat-card glass"><div class="stat-top"><span>Hosting accounts</span><b class="stat-icon">▣</b></div><strong>08</strong><small><span class="positive">●</span> Demo data</small></article>
+            <article class="stat-card glass"><div class="stat-top"><span>Storage used</span><b class="stat-icon">◫</b></div><strong>24.8 <em>GB</em></strong><div class="progress"><span style="width:42%"></span></div><small>24.8 GB of 60 GB</small></article>
+            <article class="stat-card glass"><div class="stat-top"><span>Bandwidth</span><b class="stat-icon">⇅</b></div><strong>186 <em>GB</em></strong><div class="progress"><span style="width:61%"></span></div><small>186 GB of 300 GB</small></article>
+            <article class="stat-card glass"><div class="stat-top"><span>Domains</span><b class="stat-icon">◎</b></div><strong>12</strong><small>Across all demo accounts</small></article>
+          </div>
+          <div class="section-heading"><div><h2>Quick access</h2><p class="muted">Common hosting tools</p></div></div>
+          <div class="quick-grid">
+            <button class="quick-card glass" data-go="File Manager"><span>▤</span><b>File Manager</b><small>Browse website files</small><i>↗</i></button>
+            <button class="quick-card glass" data-go="Databases"><span>▦</span><b>Databases</b><small>Manage database spaces</small><i>↗</i></button>
+            <button class="quick-card glass" data-go="Domains"><span>◎</span><b>Domains & DNS</b><small>Manage domain records</small><i>↗</i></button>
+            <button class="quick-card glass" data-go="Backups"><span>◷</span><b>Backups</b><small>Review restore points</small><i>↗</i></button>
+          </div>
+          <div class="section-heading"><div><h2>Websites</h2><p class="muted">Your recently managed websites</p></div><button class="text-btn" data-go="Websites">View all ↗</button></div>
+          <div class="table-card glass"><div class="table-head"><span>WEBSITE</span><span>STATUS</span><span>STORAGE</span><span>PLAN</span></div>
+            <div class="table-row"><div class="site-cell"><span class="site-icon">✦</span><span><b>arhost-demo.example</b><small>Primary website</small></span></div><span class="tag"><i></i> Demo active</span><span>4.2 GB</span><span>Starter</span></div>
+            <div class="table-row"><div class="site-cell"><span class="site-icon purple">⌘</span><span><b>project-demo.example</b><small>Additional website</small></span></div><span class="tag"><i></i> Demo active</span><span>2.8 GB</span><span>Basic</span></div>
+          </div>
+        </section>
+
+        <section id="placeholderPage" class="placeholder glass hidden">
+          <div class="placeholder-icon">✧</div><p class="eyebrow">AR HOST MODULE</p><h2 id="placeholderTitle">Module preview</h2>
+          <p class="muted">This module is part of the AR HOST roadmap. Its real operations will be enabled after the secure backend and server agent are connected.</p>
+          <span class="coming">PLANNED MODULE</span>
+        </section>
+        <footer>© 2026 <b>AR HOST</b><span>Built for a better hosting experience.</span></footer>
+      </div>
+    </section>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <script>
+const loginView=document.getElementById('loginView');const appView=document.getElementById('appView');const toast=document.getElementById('toast');
+function notify(message){toast.textContent=message;toast.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>toast.classList.remove('show'),2600)}
+document.getElementById('demoLogin').addEventListener('submit',e=>{e.preventDefault();loginView.classList.add('hidden');appView.classList.remove('hidden')});
+document.getElementById('logout').addEventListener('click',()=>{appView.classList.add('hidden');loginView.classList.remove('hidden');document.getElementById('password').value=''});
+function openPage(page){document.querySelectorAll('.nav-item[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===page));document.getElementById('pageTitle').textContent=page;document.getElementById('pageCrumb').textContent=' / '+page;const isOverview=page==='Overview';document.getElementById('overviewPage').classList.toggle('hidden',!isOverview);document.getElementById('placeholderPage').classList.toggle('hidden',isOverview);document.getElementById('placeholderTitle').textContent=page;document.getElementById('pageSubtitle').textContent=isOverview?'Here’s what’s happening with your hosting services.':'Manage your '+page.toLowerCase()+' workspace.';document.getElementById('sidebar').classList.remove('open')}
+document.querySelectorAll('.nav-item[data-page]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>openPage(b.dataset.go)));
+document.getElementById('newSite').addEventListener('click',()=>notify('Website provisioning will be enabled after backend integration.'));
+document.getElementById('menuToggle').addEventListener('click',()=>document.getElementById('sidebar').classList.toggle('open'));
+
+  </script>
+</body>
+</html>
